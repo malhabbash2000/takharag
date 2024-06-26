@@ -9,8 +9,6 @@ interface LoginModalProps {
   onRequestClose: () => void;
 }
 
-//  anything
-
 const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onRequestClose }) => {
   return (
     <Modal
