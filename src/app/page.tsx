@@ -9,7 +9,6 @@ export default function Home() {
       <Header />
       <PrimaryImage />
       <SecondaryImage />
-      <h1>test</h1>
     </main>
   );
 }
