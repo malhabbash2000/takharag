@@ -1,12 +1,36 @@
 // components/LoginModal.tsx
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
+import RegisterModal from "./RegisterModal";
+import Link from "next/link";
 
 Modal.setAppElement("main");
 
 interface LoginModalProps {
   isOpen: boolean;
   onRequestClose: () => void;
+}
+
+function Register() {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => setModalIsOpen(true);
+
+  const closeModal = () => setModalIsOpen(false);
+
+  return (
+    <div className="flex flex-row justify-center items-center gap-2">
+      <Link
+        href="#"
+        onClick={openModal}
+        className="text-primary hover:text-white text-2xl items-center"
+      >
+        إنشاءحساب جديد
+      </Link>
+      {/* <img src="./user-interface.png" /> */}
+      <RegisterModal isOpen={modalIsOpen} onRequestClose={closeModal}></RegisterModal>
+    </div>
+  );
 }
 
 const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onRequestClose }) => {
@@ -47,9 +71,12 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onRequestClose }) => {
             دخول
           </button>
         </form>
+        <Register></Register>
+        <br />
         <button onClick={onRequestClose} className="mt-4 text-gray-600">
           Close
         </button>
+
       </div>
     </Modal>
   );
