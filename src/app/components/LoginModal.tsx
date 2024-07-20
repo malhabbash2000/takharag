@@ -4,7 +4,7 @@ import Modal from "react-modal";
 import RegisterModal from "./RegisterModal";
 import Link from "next/link";
 
-Modal.setAppElement("main");
+Modal.setAppElement('body')
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -36,7 +36,6 @@ function Register() {
 const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onRequestClose }) => {
   return (
     <Modal
-      id="main"
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Login Modal"

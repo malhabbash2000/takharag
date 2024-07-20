@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 
-Modal.setAppElement("main");
+Modal.setAppElement('body')
 
 interface RegisterModalProps {
   isOpen: boolean;
@@ -11,7 +11,6 @@ interface RegisterModalProps {
 const RegisterModal: React.FC<RegisterModalProps> = ({ isOpen, onRequestClose }) => {
   return (
     <Modal
-      id="main"
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Register Modal"
