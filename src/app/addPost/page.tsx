@@ -1,49 +1,69 @@
-import styles from "../page.module.css";
 import Header from "../components/Header";
-import Link from "next/link";
-import React from 'react'
+import React from "react";
 
 function addPost() {
   return (
-    <div className={`${"flex"} ${"justify-center"} ${"flex-col"} ${"items-center"}`}>
-      <Header></Header>
-    <div className={`${styles.background} ${"flex"} ${"justify-center"} ${"flex-col"} ${"items-center"}`}>
-      <form method="post" className={`${styles["form-add"]}`}>
-        <legend className={`${styles["title-form"]}`}>أضف مشروعك للبيع</legend>
-        
-        <div className="m-4">
-          {/* proj name */}
-            <label htmlFor="projName"></label>
-            <input className={styles.input} type="text" id="projName" name="projName" placeholder="عنوان المشروع" />
-            <br />
-            {/* city */}
-            <div className="flex flex-row gap-5" >
-            <label htmlFor="city"></label>
-            <input className={`${styles.input} w-1/2 h-12`} type="text" id="city" name="city" placeholder="المدينة" />
-            <br />
-            {/* price */}
-            <label htmlFor="price"></label>
-            <input className={`${styles.input} w-1/2 h-12`} type="text" id="price" name="price" placeholder="السعر المقترح" />
-            <br />
+    <div className="relative">
+      <Header />
+
+      <div className="pt-10">
+        <div className="bg-background rounded-3xl shadow-2xl pt-8 w-full max-w-4xl mx-auto h-full">
+          <h2 className="text-2xl text-center font-bold text-primary">
+            أضف مشروعك للبيع
+          </h2>
+          <form>
+            <div className="flex m-6">
+              <input
+                id="postTitle"
+                type="text"
+                name="Post Title"
+                className="w-full p-3 bg-zinc-800 text-white border border-zinc-700 rounded placeholder-gray-500
+               focus:outline-none focus:ring-2 focus:ring-primary focus:text-primary text-center"
+                placeholder="عنوان المشروع"
+              />
             </div>
-            {/* projDesc */}
-            <label htmlFor="projDesc"></label>
-            <input className={`${styles.input} ${"projDesc"}`} type="text" id="projDesc" name="projDesc" placeholder="وصف المشروع" />
-            <br />
-            {/* sellRes */}
-            <label htmlFor="sellRes"></label>
-            <input className={`${styles.input} ${"sellRes"}`} type="text" id="sellRes" name="sellRes" placeholder="سبب البيع" />
-            <br />
-            {/* pic */}
-            <label htmlFor="pic"></label>
-            <input className={`${styles.input} ${"pic"}`} type="text" id="pic" name="pic" placeholder="إضافة صور للمشروع" />
+            <div className="flex m-6 gap-6">
+              <input
+                id="postcity"
+                type="text"
+                name="Post City"
+                className="w-full p-3 bg-zinc-800 text-white border border-zinc-700 rounded placeholder-gray-500
+               focus:outline-none focus:ring-2 focus:ring-primary focus:text-primary text-center"
+                placeholder="المدينة"
+              />
+              <input
+                id="postPrice"
+                type="text"
+                name="Post Price"
+                className="w-full p-3 bg-zinc-800 text-white border border-zinc-700 rounded placeholder-gray-500
+               focus:outline-none focus:ring-2 focus:ring-primary focus:text-primary text-center"
+                placeholder="السعر المقترح"
+              />
+            </div>
+            <div className="flex m-6">
+              <input
+                id="posrDescription"
+                type="text"
+                name="Post Description"
+                className="w-full p-10 bg-zinc-800 text-white border border-zinc-700 rounded placeholder-gray-500
+               focus:outline-none focus:ring-2 focus:ring-primary focus:text-primary text-center"
+                placeholder="وصف المشروع"
+              />
+            </div>
+            <div className="flex m-6">
+              <select className="flex m-6">
+                <option>عدم الرغبة في الإشراف على المشروع</option>
+                <option>دخل المشروع لا يناسبني</option>
+                <option>تكاليف المشروع أكثر من إيراداته</option>
+                <option>موقع المشروع لا يناسبني</option>
+                <option>عدم القدرة على تشغيل المشروع</option>
+              </select>
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
 export default addPost;
-
-

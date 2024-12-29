@@ -8,25 +8,37 @@ import LoginModal from "./LoginModal";
 // put logo in nav
 function Logo() {
   return (
-    <Image
-      src="/Takharag_Logo-removebg-preview.png"
-      width={70}
-      height={90.9}
-      alt="Logo"
-    />
+    <Link href="/">
+      <Image
+        src="/Takharag_Logo-removebg-preview.png"
+        width={70}
+        height={90.9}
+        alt="Logo"
+        className="transition-transform duration-300 transform hover:scale-90 hover:opacity-80"
+      />
+    </Link>
   );
 }
 
 function Nav() {
   return (
-    <div className="flex flex-row justify-center items-end gap-10 text-primary text-2xl">
-      <Link href="/addPost" className="hover:text-white">
+    <div className="flex flex-row justify-center gap-10 text-primary text-2xl">
+      <Link
+        href="/addPost"
+        className="transition-transform duration-300 transform hover:scale-90 hover:opacity-80"
+      >
         أضف عرض
       </Link>
-      <Link href="/browsePosts" className="hover:text-white">
+      <Link
+        href="/browsePosts"
+        className="transition-transform duration-300 transform hover:scale-90 hover:opacity-80"
+      >
         تصفح العروض
       </Link>
-      <Link href="/" className="hover:text-white test">
+      <Link
+        href="/"
+        className="transition-transform duration-300 transform hover:scale-90 hover:opacity-80"
+      >
         الرئيسية
       </Link>
     </div>
@@ -41,15 +53,15 @@ function Login() {
   const closeModal = () => setModalIsOpen(false);
 
   return (
-    <div className="flex flex-row justify-center items-center gap-2">
+    <div className="flex flex-row justify-center items-center gap-2 transition-transform duration-300 transform hover:scale-90 hover:opacity-80">
       <Link
         href="#"
         onClick={openModal}
-        className="text-primary hover:text-white text-2xl items-center"
+        className="text-primary text-2xl items-center"
       >
         تسجيل الدخول
       </Link>
-      <img src="./user-interface.png" />
+      <img src="./user-interface.png" className="" />
       <LoginModal isOpen={modalIsOpen} onRequestClose={closeModal}></LoginModal>
     </div>
   );
@@ -57,7 +69,7 @@ function Login() {
 
 function Header() {
   return (
-    <div className="p-4 w-full flex flex-row justify-between items-center bg-background">
+    <div className="flex w-full justify-between flex-row items-center bg-background p-4">
       <Login />
       <Nav />
       <Logo />

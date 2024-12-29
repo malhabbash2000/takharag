@@ -4,29 +4,29 @@ import Link from "next/link";
 
 function PrimaryImage() {
   return (
-    <div className="relative text-center">
+    <div className="relative flex items-center justify-center pt-32">
       <Image
         alt="Main Page Image"
         src="/Takharag_BG_Main.png"
         width={2200}
-        height={800}
-        className="rounded-2xl m-6 brightness-75 contrast-150"
+        height={1000}
+        className="absolute rounded-3xl brightness-75 contrast-150"
       />
-      <div className="w-full absolute top-0 left-0 text-center ">
-        <h1 className=" text-primary text-9xl font-bold text-center mt-52">
+
+      <div className="relative text-center p-8">
+        <h1 className="text-primary text-6xl font-bold mb-6">
           ! تخارج من مشروعك بأسهل طريقة
         </h1>
-        <h2 className="text-4xl text-center text-white mt-20 font-bold">
+        <h2 className="text-2xl text-white mb-12">
           منصة تخارج تسمح لملاك المشاريع بالتخلص من مشاريعهم السابقة عن طريق
           عرضها في المنصة في بيئة آمنة وموثوقة
         </h2>
-        <div className="w-full h-full">
-          <button className="text-black font-bold text-3xl  bg-primary h-20 w-96 px-6 m-56  transition-colors duration-150  rounded-lg focus:shadow-outline hover:bg-background hover:text-white">
-            <Link className="w-full h-full" href="/addPost">
-              أضف مشروعك
-            </Link>
+
+        <Link href="/addPost">
+          <button className="bg-primary text-black font-bold text-xl py-4 px-8 rounded-lg hover:bg-background hover:text-white transition-colors duration-150">
+            أضف مشروعك
           </button>
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -7,8 +7,10 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Header />
-      <PrimaryImage />
-      <SecondaryImage />
+      <div className="flex flex-col gap-40">
+        <PrimaryImage />
+        <SecondaryImage />
+      </div>
     </main>
   );
 }
